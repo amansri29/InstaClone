@@ -1,0 +1,107 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Top Toolbar-->
+        <RelativeLayout
+            android:id="@+id/rel_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <include layout="@layout/snippet_top_profilebar"/>
+        </RelativeLayout>
+
+
+        <!--Middle Section-->
+        <RelativeLayout
+            android:id="@+id/rel_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/white_gray_border_bottom"
+            android:layout_below="@+id/rel_layout1">
+
+            <LinearLayout
+                android:id="@+id/linLayout"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="100">
+                <RelativeLayout
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="25"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:civ_border_color="@android:color/black"
+                        app:civ_border_width="2dp"
+                        android:layout_centerVertical="true"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_weight="75"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <include layout="@layout/snippet_top_profile"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linLayout2"
+                android:padding="20dp"
+                android:layout_below="@+id/linLayout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/display_name"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:text="Aman Srivastav"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/desc"
+                    android:textColor="@android:color/black"
+                    android:text="Enginner by profession and creative by nature"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/website"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:text="amansri29.sarahah.com/"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_marginBottom="50dp"
+                android:layout_below="@+id/linLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <GridView
+                    android:id="@+id/grid_view"
+                    android:columnCount="3"
+                    android:verticalSpacing="1dp"
+                    android:gravity="center"
+                    android:horizontalSpacing="1dp"
+                    android:stretchMode="columnWidth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </GridView>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</merge>
