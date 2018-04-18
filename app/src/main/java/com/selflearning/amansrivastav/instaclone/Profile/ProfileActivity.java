@@ -10,11 +10,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toolbar;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.selflearning.amansrivastav.instaclone.R;
 import com.selflearning.amansrivastav.instaclone.utils.BottomNavigationViewHelper;
+import com.selflearning.amansrivastav.instaclone.utils.UniversalImageLoader;
 
 /**
  * Created by Aman.Srivastav on 05-04-2018.
@@ -23,14 +25,26 @@ import com.selflearning.amansrivastav.instaclone.utils.BottomNavigationViewHelpe
 public class ProfileActivity extends AppCompatActivity {
     private static final String TAG = "ProfileActivity";
     private static final int ACTIVITY_NUM = 4;
+    private ProgressBar progressBar;
+    ImageView profileImage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        progressBar = (ProgressBar) findViewById(R.id.profile_progressbar);
+        progressBar.setVisibility(View.GONE);
         setupBottomNavigationView();
+        profileImage = (ImageView) findViewById(R.id.profile_photo);
         Log.d(TAG, "onCreate: started");
         setupToolbar();
+        setProfilePhoto();
+    }
+
+    private void setProfilePhoto()
+    {
+        String imageUrl = "https://static.pexels.com/photos/5854/sea-woman-legs-water-medium.jpg";
+        UniversalImageLoader.setImage(imageUrl, profileImage, null, "");
     }
 
 

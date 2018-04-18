@@ -28,6 +28,8 @@ dependencies {
 
     compile 'de.hdodenhof:circleimageview:2.2.0'
 
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
 
     // Design Lib for design support
     compile 'com.android.support:design:26.1.0'

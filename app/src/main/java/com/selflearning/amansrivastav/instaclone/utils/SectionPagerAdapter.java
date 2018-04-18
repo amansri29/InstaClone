@@ -1,4 +1,4 @@
-package com.selflearning.amansrivastav.instaclone.Home;
+package com.selflearning.amansrivastav.instaclone.utils;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

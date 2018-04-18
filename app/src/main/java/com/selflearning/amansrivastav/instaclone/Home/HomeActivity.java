@@ -8,8 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.selflearning.amansrivastav.instaclone.R;
 import com.selflearning.amansrivastav.instaclone.utils.BottomNavigationViewHelper;
+import com.selflearning.amansrivastav.instaclone.utils.SectionPagerAdapter;
+import com.selflearning.amansrivastav.instaclone.utils.UniversalImageLoader;
 
 public class HomeActivity extends AppCompatActivity {
     private static final String TAG = "HomeActivity";
@@ -19,8 +22,16 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        initImageLoader();
         setupBottomNavigationView();
         setupViewPager();
+    }
+
+
+    private void initImageLoader()
+    {
+        UniversalImageLoader universalImageLoader = new UniversalImageLoader(this);
+        ImageLoader.getInstance().init(universalImageLoader.getConfig());
     }
 
     /*
