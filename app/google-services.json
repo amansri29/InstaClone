@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "75403897486",
+    "firebase_url": "https://instragramclone-2ad19.firebaseio.com",
+    "project_id": "instragramclone-2ad19",
+    "storage_bucket": "instragramclone-2ad19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75403897486:android:859460ca48c5d718",
+        "android_client_info": {
+          "package_name": "com.selflearning.amansrivastav.instaclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75403897486-vja66407oo38j8opqt8h9ncakjrmsvm6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDptzjSK2gKDh8LDuVcI0G0rBy5JW9cPVA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

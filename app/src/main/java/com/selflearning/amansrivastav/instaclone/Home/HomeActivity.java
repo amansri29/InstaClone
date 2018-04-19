@@ -1,14 +1,19 @@
 package com.selflearning.amansrivastav.instaclone.Home;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.selflearning.amansrivastav.instaclone.Login.LoginActivity;
 import com.selflearning.amansrivastav.instaclone.R;
 import com.selflearning.amansrivastav.instaclone.utils.BottomNavigationViewHelper;
 import com.selflearning.amansrivastav.instaclone.utils.SectionPagerAdapter;
@@ -18,15 +23,48 @@ public class HomeActivity extends AppCompatActivity {
     private static final String TAG = "HomeActivity";
     private static final int ACTIVITY_NUM = 0;
 
+
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Log.d(TAG, "onCreate: Inside Home Activity");
         initImageLoader();
         setupBottomNavigationView();
         setupViewPager();
+        setupFirebaseAuth();
     }
 
+
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//    }
+
+    private void setupFirebaseAuth()
+    {
+        Log.d(TAG, "setupFirebaseAuth: Setting Up FireBase");
+        mAuth = FirebaseAuth.getInstance();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null)
+        {
+            Log.d(TAG, "setupFirebaseAuth: User is signed in " + currentUser.getUid());
+        }
+        else
+        {
+            Log.d(TAG, "setupFirebaseAuth: User is signed out");
+            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+    }
 
     private void initImageLoader()
     {

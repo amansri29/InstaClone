@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content">
                 <GridView
                     android:id="@+id/grid_view"
-                    android:columnCount="3"
+                    android:numColumns="3"
                     android:verticalSpacing="1dp"
                     android:gravity="center"
                     android:horizontalSpacing="1dp"

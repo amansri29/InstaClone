@@ -22,8 +22,8 @@ public class LikeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        setupBottomNavigationView();
+        setContentView(R.layout.activity_login);
+//        setupBottomNavigationView();
         Log.d(TAG, "onCreate: started");
     }
 
